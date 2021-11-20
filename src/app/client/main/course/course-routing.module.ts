@@ -1,0 +1,20 @@
+import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
+import { CourseIntroComponent } from './course-intro/course-intro.component';
+import { CourseLearnComponent } from './course-learn/course-learn.component';
+import { ListCategoriesComponent } from './list-categories/list-categories.component';
+import { ListCoursesComponent } from './list-courses/list-courses.component';
+
+const routes: Routes = [
+  { path: 'index', redirectTo: '', pathMatch: 'full' },
+  { path: '', component: ListCoursesComponent },
+  { path: 'category', component: ListCategoriesComponent },
+  { path: 'intro', component: CourseIntroComponent },
+  { path: 'learn', component: CourseLearnComponent },
+];
+
+@NgModule({
+  imports: [RouterModule.forChild(routes)],
+  exports: [RouterModule]
+})
+export class CourseRoutingModule { }

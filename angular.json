@@ -36,7 +36,13 @@
             "styles": [
               "src/styles.scss"
             ],
-            "scripts": []
+            "scripts": [
+              "src/assets/client/assets/js/uikit.js",
+              "src/assets/client/assets/js/tippy.all.min.js",
+              "src/assets/client/assets/js/simplebar.js",
+              "src/assets/client/assets/js/custom.js",
+              "src/assets/client/assets/js/bootstrap-select.min.js"
+            ]
           },
           "configurations": {
             "production": {
