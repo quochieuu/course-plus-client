@@ -4,6 +4,7 @@ import { Component, OnInit } from '@angular/core';
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: [
+    './../../../../assets/client/assets/css/tailwind.css',
     './home.component.scss']
 })
 export class HomeComponent implements OnInit {

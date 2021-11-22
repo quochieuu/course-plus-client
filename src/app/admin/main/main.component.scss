@@ -22,7 +22,7 @@
     left: 0;
     height: 100%;
     width: 260px;
-    background: #11101d;
+    background: #fff;
     z-index: 100;
     transition: all 0.5s ease;
   }
@@ -37,7 +37,7 @@
   }
   .sidebar .logo-details i{
     font-size: 30px;
-    color: #fff;
+    color: #707275;
     height: 50px;
     min-width: 78px;
     text-align: center;
@@ -45,7 +45,7 @@
   }
   .sidebar .logo-details .logo_name{
     font-size: 22px;
-    color: #fff;
+    color: #707275;
     font-weight: 600;
     transition: 0.3s ease;
     transition-delay: 0.1s;
@@ -72,7 +72,11 @@
     transition: all 0.4s ease;
   }
   .sidebar .nav-links li:hover{
-    background: #1d1b31;
+    background: #fff;
+    color: #0e9f6e;
+  }
+  .sidebar .nav-links li:hover label{
+    color: #0e9f6e;
   }
   .sidebar .nav-links li .iocn-link{
     display: flex;
@@ -87,7 +91,7 @@
     min-width: 78px;
     text-align: center;
     line-height: 50px;
-    color: #fff;
+    color: #707275;
     font-size: 20px;
     cursor: pointer;
     transition: all 0.3s ease;
@@ -103,11 +107,18 @@
     align-items: center;
     text-decoration: none;
   }
+  span.link_name:hover {
+    color: #0e9f6e!important;
+    }
+    span.link_name {
+        cursor: pointer;
+    }
+
   .sidebar .nav-links li label .link_name,
   .sidebar .nav-links li a .link_name{
-    font-size: 18px;
-    font-weight: 400;
-    color: #fff;
+    font-size: 15px;
+    font-weight: 600;
+    color: #707275;
     transition: all 0.4s ease;
   }
   .sidebar.close .nav-links li label .link_name,
@@ -117,17 +128,22 @@
   }
   .sidebar .nav-links li .sub-menu{
     padding: 6px 6px 14px 80px;
-    margin-top: -10px;
-    background: #1d1b31;
+    // margin-top: -10px;
+    background: #fff;
     display: none;
   }
   .sidebar .nav-links li.showMenu .sub-menu{
     display: block;
   }
+  .sidebar {
+    overflow: scroll;
+    overflow-x: hidden;
+}
   .sidebar .nav-links li .sub-menu a{
-    color: #fff;
+    color: #707275;
+    font-weight: 500;
     font-size: 15px;
-    padding: 5px 0;
+    padding: 6px 0;
     white-space: nowrap;
     opacity: 0.6;
     transition: all 0.3s ease;
@@ -179,7 +195,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background: #1d1b31;
+    background: #0e9f6e;
     padding: 12px 0;
     transition: all 0.5s ease;
   }
@@ -199,7 +215,7 @@
     object-fit: cover;
     border-radius: 16px;
     margin: 0 14px 0 12px;
-    background: #1d1b31;
+    background: #0e9f6e;
     transition: all 0.5s ease;
   }
   .sidebar.close .profile-details img{
@@ -268,12 +284,13 @@
     display: flex;
     height: 50px;
     width: 100%;
-    background: #1b1b1b;
+    background: #fff;
     align-items: center;
     justify-content: space-between;
     padding: 0 50px 0 100px;
     flex-wrap: wrap;
     box-sizing: border-box;
+    box-shadow: 0 1px 2px 0 rgb(0 0 0 / 5%);
   }
   nav .logo{
     color: #fff;
@@ -289,7 +306,7 @@
     margin: 0 5px;
   }
   nav ul li a{
-    color: #f2f2f2;
+    color: #0e9f6e;
     text-decoration: none;
     font-size: 13px;
     font-weight: 500;
