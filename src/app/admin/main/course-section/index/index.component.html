@@ -1,18 +1,9 @@
-<h1 class="my-6 text-lg font-bold text-gray-700 dark:text-gray-300">Courses</h1>
-<div class="flex justify-between filter-bar">
+<h1 class="my-6 text-lg font-bold text-gray-700 dark:text-gray-300">{{course.name}}</h1>
+
+<div class="flex justify-between mb-2">
+    <h4 class="text-lg font-bold text-gray-400 dark:text-gray-300">Danh sách section</h4>
   <div>
-    Items per Page:
-      <select (change)="handlePageSizeChange($event)">
-        <option *ngFor="let size of pageSizes" [ngValue]="size">
-          {{ size }}
-        </option>
-      </select>
-  </div>
-  <div>
-    <input type="text" class="w-96 form-input px-4 py-2 border border-gray-200" placeholder="Nhập từ khóa để tìm kiếm..." (input)="handleSearch($event)">
-  </div>
-  <div>
-    <a routerLink="/admin/course/create" class="align-bottom inline-flex items-center justify-center cursor-pointer leading-5 transition-colors duration-150 font-medium focus:outline-none px-3 py-1 rounded-md text-xs text-white bg-green-500 border border-transparent active:bg-green-600 hover:bg-green-600 focus:ring focus:ring-purple-300">
+    <a [routerLink]="['/admin/course-section/create', course.id]" class="align-bottom inline-flex items-center justify-center cursor-pointer leading-5 transition-colors duration-150 font-medium focus:outline-none px-3 py-1 rounded-md text-xs text-white bg-green-500 border border-transparent active:bg-green-600 hover:bg-green-600 focus:ring focus:ring-purple-300">
       Thêm mới
     </a>
   </div>
@@ -27,31 +18,16 @@
                 class="text-xs font-semibold tracking-wide text-left text-gray-500 uppercase border-b border-gray-200 dark:border-gray-700 bg-gray-100 dark:text-gray-400 dark:bg-gray-800">
                 <tr>
                     <td class="px-4 py-3">Name</td>
-                    <td class="px-4 py-3">Price</td>
-                    <td class="px-4 py-3">View Count</td>
+                    <td class="px-4 py-3">Description</td>
                     <td class="px-4 py-3">Status</td>
                     <td class="px-4 py-3 text-right">Actions</td>
                 </tr>
             </thead>
             <tbody
                 class="bg-white divide-y divide-gray-100 dark:divide-gray-700 dark:bg-gray-800 text-gray-700 dark:text-gray-400">
-                <tr *ngFor="let item of courses | paginate: { itemsPerPage: pageSize, currentPage: p, totalItems: totalItems }">
-                    <td class="px-4 py-3"><span class="text-sm flex items-center">
-                        <div class="relative rounded-full inline-block w-8 h-8 hidden p-1 mr-2 md:block bg-gray-50 shadow-none">
-                            <img src="{{baseUrl}}/courses/images/{{item.urlImage}}" alt="" class="object-cover w-full h-full rounded-full">
-                        </div>
-                        
-                        {{item.name}}
-                    </span></td>
-                    <td *ngIf="item.price > 0" class="px-4 py-3"><span class="text-sm">
-                        {{item.price}} (<i>{{ item.priceUnit}}</i>)
-                    </span></td>
-                    <td *ngIf="item.price == 0" class="px-4 py-3"><span class="text-sm">
-                      Miễn phí
-                  </span></td>
-                    <td class="px-4 py-3"><span class="text-sm">
-                        {{item.viewCount}} 
-                    </span></td>
+                <tr *ngFor="let item of item">
+                    <td class="px-4 py-3"><span class="text-sm">{{item.name}}</span></td>
+                    <td class="px-4 py-3"><span class="text-sm">{{item.description}}</span></td>
                     <td class="px-4 py-3">
                       <span *ngIf="item.isActive === true" class="inline-flex px-2 text-xs font-medium leading-5 rounded-full text-green-500 bg-green-100 dark:bg-green-800 dark:text-green-100">
                         Active
@@ -62,9 +38,7 @@
                     </td>
                     <td class="px-4 py-3">
                         <div class="flex justify-end text-right">
-                          <a [routerLink]="['/admin/course-faq', item.slug]">Faq</a>
-                          <a [routerLink]="['/admin/course-section', item.slug]">Section</a>
-                          <a [routerLink]="['/admin/course/update', item.id]">
+                          <a [routerLink]="['/admin/course-section/update', item.id, slug]">
                             <div class="p-2 cursor-pointer text-gray-400 hover:text-green-600">
                                 <p data-tip="true" data-for="edit" currentitem="false"><svg stroke="currentColor"
                                         fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round"
@@ -96,6 +70,8 @@
                 </tr>
             </tbody>
         </table>
-        <pagination-controls (pageChange)="handlePageChange($event)"></pagination-controls>
     </div>
 </div>
+
+<a routerLink="/admin/course/index"
+  class="inline-block align-baseline font-bold text-sm text-blue-500 hover:text-blue-800">Go to list courses</a>
