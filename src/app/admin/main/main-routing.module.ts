@@ -6,6 +6,7 @@ const routes: Routes = [
   { path: 'home', redirectTo: '', pathMatch: 'full' },
   { path: '', component: HomeComponent },
   { path: 'course-category', loadChildren: () => import('./course-category/course-category.module').then(m => m.CourseCategoryModule) },
+  { path: 'course', loadChildren: () => import('./course/course.module').then(m => m.CourseModule) },
 ];
 
 @NgModule({
