@@ -1,30 +1,30 @@
 import { Component, NgZone, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { CourseCategory } from 'src/app/shared/models/course-category';
+import { environment } from 'src/environments/environment';
 import Swal from 'sweetalert2';
-import { CourseCategoryService } from '../course-category.service';
+import { CourseService } from '../course.service';
 
 @Component({
   selector: 'app-index',
   templateUrl: './index.component.html',
   styleUrls: [
     './../../../../../assets/client/assets/css/tailwind.css',
-    './index.component.scss',
-  ],
+    './index.component.scss']
 })
-
 export class IndexComponent implements OnInit {
-  courseCategories: any = [];
+  private apiURL = environment.apiUrl;
+  courses: any = [];
   totalItems: any;
   p: number = 1;
   pageSize = 10;
   pageSizes = [10, 15, 20];
   query: string = '';
+  baseUrl: string = this.apiURL;
 
   constructor(
     private router: Router,
     private ngZone: NgZone,
-    public courseCategoryService: CourseCategoryService
+    public courseService: CourseService
   ) {}
 
   ngOnInit(): void {
@@ -49,11 +49,11 @@ export class IndexComponent implements OnInit {
   }
 
   getPage(p: number, pageSize: number, query: string) {
-    this.courseCategoryService
+    this.courseService
       .getPage(p, pageSize, query)
       .subscribe((data: any) => {
         console.log(data);
-        this.courseCategories = data.items;
+        this.courses = data.items;
         this.totalItems = data.totalRecords;
       });
   }
@@ -82,8 +82,8 @@ export class IndexComponent implements OnInit {
         if (result.isConfirmed) {
           this.getPage(this.p, this.pageSize, this.query);
 
-          this.courseCategoryService.delete(id).subscribe((res) => {
-            this.courseCategories = this.courseCategories.filter(
+          this.courseService.delete(id).subscribe((res) => {
+            this.courses = this.courses.filter(
               (item: { id: string }) => item.id !== id
             );
           });
@@ -95,4 +95,5 @@ export class IndexComponent implements OnInit {
         }
       });
   }
+
 }

@@ -36,9 +36,9 @@ export class EditComponent implements OnInit {
     const swalWithBootstrapButtons = Swal.mixin({
       customClass: {
         confirmButton:
-          'rounded-md inline-block align-baseline text-sm text-white bg-green-500 hover:text-blue-800 px-4 py-1',
+          'btn btn-success',
         cancelButton:
-          'rounded-md inline-block align-baseline text-sm text-white bg-red-500 hover:text-red-800 px-4 py-1',
+          'btn btn-default',
       },
       buttonsStyling: false,
     });

@@ -1,20 +1,16 @@
 <h1 class="my-6 text-lg font-bold text-gray-700 dark:text-gray-300">Update Course Category</h1>
 
-<div class="container w-2/4 mb-5">
-    <div class="row justify-content-center mt-5">
-    <div class="col-md-4">
+<div class="container w-100">
+    <div class="row mt-5">
+    <div class="col-md-6">
         <form (ngSubmit)="onSubmit()" class="hct-form">
           <div class="form-group">
             <label class="block text-gray-700 text-sm font-bold mb-2">Name</label>
-            <input class="mb-3 shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" type="text" [(ngModel)]="item.name" name="name" required>
-          </div>
-          <div class="form-group">
-            <label class="block text-gray-700 text-sm font-bold mb-2">Slug</label>
-            <input class="mb-3 shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" type="text" [(ngModel)]="item.slug" name="slug" required>
+            <input class="mb-3 appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" type="text" [(ngModel)]="item.name" name="name" required>
           </div>
           <div class="form-group">
             <label class="block text-gray-700 text-sm font-bold mb-2">Description</label>
-            <input class="mb-3 shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" type="text" [(ngModel)]="item.description" name="description" required>
+            <input class="mb-3 appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" type="text" [(ngModel)]="item.description" name="description" required>
           </div>
   
           <div class="form-group">

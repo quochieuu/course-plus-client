@@ -40,7 +40,7 @@ export class CourseCategoryService {
 
     find(id: string): Observable<CourseCategory> {
         return this.httpClient
-            .get<CourseCategory>(this.apiURL + '/api/course-category/get-by-id?id=' + id, this.httpOptions)
+            .get<CourseCategory>(this.apiURL + '/api/course-category/get-by-id/' + id, this.httpOptions)
     }
 
     update(id: string, item: any): Observable<CourseCategory> {
