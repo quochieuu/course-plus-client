@@ -9,6 +9,7 @@ const routes: Routes = [
   { path: 'course-faq', loadChildren: () => import('./course-faq/course-faq.module').then(m => m.CourseFaqModule) },
   { path: 'course', loadChildren: () => import('./course/course.module').then(m => m.CourseModule) },
   { path: 'course-section', loadChildren: () => import('./course-section/course-section.module').then(m => m.CourseSectionModule) },
+  { path: 'course-lecture', loadChildren: () => import('./course-lecture/course-lecture.module').then(m => m.CourseLectureModule) },
 ];
 
 @NgModule({

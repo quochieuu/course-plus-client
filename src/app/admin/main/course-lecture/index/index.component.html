@@ -1,9 +1,9 @@
-<h1 class="my-6 text-lg font-bold text-gray-700 dark:text-gray-300">{{course.name}}</h1>
+<h1 class="my-6 text-lg font-bold text-gray-700 dark:text-gray-300">{{section.name}}</h1>
 
 <div class="flex justify-between mb-2">
-    <h4 class="text-lg font-bold text-gray-400 dark:text-gray-300">Danh sách section</h4>
+    <h4 class="text-lg font-bold text-gray-400 dark:text-gray-300">Danh sách bài học</h4>
   <div>
-    <a [routerLink]="['/admin/course-section/create', course.id]" class="align-bottom inline-flex items-center justify-center cursor-pointer leading-5 transition-colors duration-150 font-medium focus:outline-none px-3 py-1 rounded-md text-xs text-white bg-green-500 border border-transparent active:bg-green-600 hover:bg-green-600 focus:ring focus:ring-purple-300">
+    <a [routerLink]="['/admin/course-lecture/create', section.id]" class="align-bottom inline-flex items-center justify-center cursor-pointer leading-5 transition-colors duration-150 font-medium focus:outline-none px-3 py-1 rounded-md text-xs text-white bg-green-500 border border-transparent active:bg-green-600 hover:bg-green-600 focus:ring focus:ring-purple-300">
       Thêm mới
     </a>
   </div>
@@ -18,7 +18,7 @@
                 class="text-xs font-semibold tracking-wide text-left text-gray-500 uppercase border-b border-gray-200 dark:border-gray-700 bg-gray-100 dark:text-gray-400 dark:bg-gray-800">
                 <tr>
                     <td class="px-4 py-3">Name</td>
-                    <td class="px-4 py-3">Description</td>
+                    <td class="px-4 py-3">Content</td>
                     <td class="px-4 py-3">Status</td>
                     <td class="px-4 py-3 text-right">Actions</td>
                 </tr>
@@ -27,7 +27,7 @@
                 class="bg-white divide-y divide-gray-100 dark:divide-gray-700 dark:bg-gray-800 text-gray-700 dark:text-gray-400">
                 <tr *ngFor="let item of item">
                     <td class="px-4 py-3"><span class="text-sm">{{item.name}}</span></td>
-                    <td class="px-4 py-3"><span class="text-sm">{{item.description}}</span></td>
+                    <td class="px-4 py-3"><span class="text-sm">{{item.content}}</span></td>
                     <td class="px-4 py-3">
                       <span *ngIf="item.isActive === true" class="inline-flex px-2 text-xs font-medium leading-5 rounded-full text-green-500 bg-green-100 dark:bg-green-800 dark:text-green-100">
                         Active
@@ -38,8 +38,7 @@
                     </td>
                     <td class="px-4 py-3">
                         <div class="flex justify-end text-right">
-                          <a [routerLink]="['/admin/course-lecture', item.id]">Lec</a>
-                          <a [routerLink]="['/admin/course-section/update', item.id, slug]">
+                          <a [routerLink]="['/admin/course-lecture/update', item.id, section.id]">
                             <div class="p-2 cursor-pointer text-gray-400 hover:text-green-600">
                                 <p data-tip="true" data-for="edit" currentitem="false"><svg stroke="currentColor"
                                         fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round"
