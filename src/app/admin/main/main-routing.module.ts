@@ -11,6 +11,7 @@ const routes: Routes = [
   { path: 'course-attachment', loadChildren: () => import('./course-attachment/course-attachment.module').then(m => m.CourseAttachmentModule) },
   { path: 'course-section', loadChildren: () => import('./course-section/course-section.module').then(m => m.CourseSectionModule) },
   { path: 'course-lecture', loadChildren: () => import('./course-lecture/course-lecture.module').then(m => m.CourseLectureModule) },
+  { path: 'blog-category', loadChildren: () => import('./blog-category/blog-category.module').then(m => m.BlogCategoryModule) },
   
 ];
 
