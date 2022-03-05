@@ -6,6 +6,7 @@ import { ListCoursesComponent } from './list-courses/list-courses.component';
 import { ListCategoriesComponent } from './list-categories/list-categories.component';
 import { CourseIntroComponent } from './course-intro/course-intro.component';
 import { CourseLearnComponent } from './course-learn/course-learn.component';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import { CourseLearnComponent } from './course-learn/course-learn.component';
   ],
   imports: [
     CommonModule,
-    CourseRoutingModule
+    CourseRoutingModule,
+    NgxPaginationModule,
   ]
 })
 export class CourseModule { }
