@@ -60,6 +60,7 @@
             <div class="flex space-x-3">
                 <a href="#" class="flex items-center justify-center h-9 px-6 rounded-md bg-gray-100"> Add to Wishlist </a>
                 <a href="course-watch.html" class="flex items-center justify-center h-9 px-6 rounded-md bg-blue-600 text-white"> Enroll Now </a>
+                <a routerLink="/course/learn/{{course.slug}}/{{course.sections[0].courseLectures[0].id}}" class="flex items-center justify-center h-9 px-6 rounded-md bg-blue-600 text-white"> Learn </a>
             </div>
              
         </div>
@@ -95,8 +96,8 @@
                 <h3 class="mb-4 text-xl font-semibold lg:mb-5"> Course Curriculum </h3>
                 <ul uk-accordion="multiple: true" class="tube-card p-4 divide-y space-y-3">
 
-                    <li class="uk-open" *ngFor="let sec of course.sections">
-                        <a class="uk-accordion-title text-md mx-2 font-semibold" href="#">  {{ sec.name }}</a>
+                    <li class="uk-open mt-2" *ngFor="let sec of course.sections">
+                        <a class="uk-accordion-title text-md mx-2 font-semibold mt-2" href="#">  {{ sec.name }}</a>
                         <div class="uk-accordion-content mt-3 text-base">
 
                             <ul class="course-curriculum-list font-medium">

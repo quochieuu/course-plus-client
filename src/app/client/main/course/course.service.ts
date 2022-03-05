@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Course } from 'src/app/shared/models/course';
 import { CourseCategory } from 'src/app/shared/models/course-category';
+import { CourseLecture } from 'src/app/shared/models/course-lecture';
 import { environment } from 'src/environments/environment';
 
 @Injectable({
@@ -37,6 +38,11 @@ export class CourseService {
       return this.httpClient
           .get<Course[]>(this.apiURL + '/api/course/filter?pageSize=' + size + '&pageIndex=' + page + '&filter=' + query, this.httpOptions)
           .pipe();
+  }
+
+  getLecture(id: string): Observable<CourseLecture> {
+    return this.httpClient
+          .get<CourseLecture>(this.apiURL + '/api/course-lecture/get-by-id/' + id, this.httpOptions)
   }
 
   create(item: any): Observable<Course> {
