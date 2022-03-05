@@ -9,7 +9,7 @@ const routes: Routes = [
   { path: 'index', redirectTo: '', pathMatch: 'full' },
   { path: '', component: ListCoursesComponent },
   { path: 'category', component: ListCategoriesComponent },
-  { path: 'intro', component: CourseIntroComponent },
+  { path: 'detail/:slug', component: CourseIntroComponent },
   { path: 'learn', component: CourseLearnComponent },
 ];
 

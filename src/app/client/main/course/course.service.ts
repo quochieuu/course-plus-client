@@ -59,6 +59,11 @@ export class CourseService {
           .get<Course>(this.apiURL + '/api/course/get-by-id/' + id, this.httpOptions)
   }
 
+  findBySlug(slug: string): Observable<Course> {
+    return this.httpClient
+        .get<Course>(this.apiURL + '/api/course/get-by-slug/' + slug, this.httpOptions)
+}
+
   update(id: string, item: any): Observable<Course> {
       return this.httpClient
           .put<Course>(this.apiURL + '/api/course/update/' + id, JSON.stringify(item), this.httpOptions)

@@ -210,7 +210,7 @@
             <!-- course list -->
             <div class="grid lg:grid-cols-3 md:grid-cols-2 gap-5">
                 
-                <a *ngFor="let item of courses | paginate: { itemsPerPage: pageSize, currentPage: p, totalItems: totalItems }" href="/{{ item.slug }}" class="uk-link-reset" title="{{ item.name }}">
+                <a *ngFor="let item of courses | paginate: { itemsPerPage: pageSize, currentPage: p, totalItems: totalItems }" routerLink="/course/detail/{{ item.slug }}" class="uk-link-reset" title="{{ item.name }}">
                     <div class="card uk-transition-toggle">
                         <div class="card-media h-40">
                             <div class="card-media-overly"></div>
