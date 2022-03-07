@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { UserLogin } from 'src/app/shared/models/login';
 import { environment } from 'src/environments/environment';
+import { UserRegister } from '../models/register';
 
 @Injectable({
   providedIn: 'root'
@@ -20,6 +21,11 @@ export class AccountService {
 
   login(data: any): Observable<UserLogin> {
     return this.httpClient.post<UserLogin>(this.apiURL + '/api/auth/login', JSON.stringify(data), this.httpOptions).pipe();
+  }
+
+  register(data: any): Observable<UserRegister> {
+    return this.httpClient
+      .post<UserRegister>(this.apiURL + '/api/auth/register', JSON.stringify(data), this.httpOptions).pipe();
   }
 
   signOut(): void {

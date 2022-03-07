@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, NgZone, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { AccountService } from 'src/app/shared/services/account.service';
 
 @Component({
   selector: 'app-login',
@@ -11,9 +13,39 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginComponent implements OnInit {
 
-  constructor() { }
+  constructor(public router: Router,
+    private ngZone: NgZone,
+    private authService: AccountService) { }
+  
+    form: any = {};
+    isLoggedIn = false;
+    isLoginFailed = false;
+    errorMessage: any;
+    errorMessage2 = '';
 
   ngOnInit(): void {
+  }
+
+  onSubmit(): void {
+    this.authService.login(this.form).subscribe(
+      data => {
+          console.log(data.token);
+        this.authService.saveToken(data.token);
+        this.authService.saveUser(data);
+
+        this.isLoginFailed = false;
+        this.isLoggedIn = true;
+        this.ngZone.run(() => this.router.navigateByUrl('/'))
+        // this.reloadPage();
+      },
+      err => {
+        this.isLoginFailed = true;
+        this.errorMessage = err.error.errors;
+        if(err.status == 401) {
+          this.errorMessage2 = "Tài khoản hoặc mật khẩu không đúng."
+        }
+      }
+    );
   }
 
 }

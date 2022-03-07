@@ -2,7 +2,7 @@ import { Component, NgZone, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import Swal from 'sweetalert2';
-import { CourseSectionService } from '../course-section.service';
+import { CourseSectionService } from '../../../../shared/services/course-section.service';
 
 @Component({
   selector: 'app-create',

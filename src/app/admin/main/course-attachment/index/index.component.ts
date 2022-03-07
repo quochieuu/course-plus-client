@@ -4,7 +4,7 @@ import { CourseLectureAttachment } from 'src/app/shared/models/course-attachment
 import { CourseLecture } from 'src/app/shared/models/course-lecture';
 import { environment } from 'src/environments/environment';
 import Swal from 'sweetalert2';
-import { CourseAttachmentService } from '../course-attachment.service';
+import { CourseAttachmentService } from '../../../../shared/services/course-attachment.service';
 
 @Component({
   selector: 'app-index',

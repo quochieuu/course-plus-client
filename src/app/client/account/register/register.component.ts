@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, NgZone, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { AccountService } from 'src/app/shared/services/account.service';
 
 @Component({
   selector: 'app-register',
@@ -11,9 +13,27 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RegisterComponent implements OnInit {
 
-  constructor() { }
+  constructor(public router: Router,
+    private ngZone: NgZone,
+    private authService: AccountService) { }
 
   ngOnInit(): void {
+  }
+
+  form: any = {};
+  isLoggedIn = false;
+  isLoginFailed = false;
+  errorMessage : any;
+
+  onSubmit(): void {
+    this.authService.register(this.form).subscribe(
+      data => {
+        this.ngZone.run(() => this.router.navigateByUrl('/login'))
+      },
+      err => {
+        this.errorMessage = err.error.errors;
+      }
+    );
   }
 
 }

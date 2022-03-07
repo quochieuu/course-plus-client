@@ -3,7 +3,7 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { AngularEditorConfig } from '@kolkov/angular-editor';
 import Swal from 'sweetalert2';
-import { CourseLectureService } from '../course-lecture.service';
+import { CourseLectureService } from '../../../../shared/services/course-lecture.service';
 
 @Component({
   selector: 'app-create',

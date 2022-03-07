@@ -2,7 +2,7 @@ import { Component, NgZone, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { environment } from 'src/environments/environment';
 import Swal from 'sweetalert2';
-import { CourseService } from '../course.service';
+import { CourseService } from '../../../../shared/services/course.service';
 
 @Component({
   selector: 'app-index',

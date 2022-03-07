@@ -3,7 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Course } from 'src/app/shared/models/course';
 import { CourseSection } from 'src/app/shared/models/course-section';
 import Swal from 'sweetalert2';
-import { CourseSectionService } from '../course-section.service';
+import { CourseSectionService } from '../../../../shared/services/course-section.service';
 
 @Component({
   selector: 'app-index',
