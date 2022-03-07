@@ -2,7 +2,7 @@ import { Component, NgZone, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { BookCategory } from 'src/app/shared/models/book-category';
 import Swal from 'sweetalert2';
-import { BookCategoryService } from '../book-category.service';
+import { BookCategoryService } from '../../../../shared/services/book-category.service';
 
 @Component({
   selector: 'app-edit',

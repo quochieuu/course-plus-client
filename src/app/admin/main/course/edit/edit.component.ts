@@ -7,7 +7,7 @@ import { Course } from 'src/app/shared/models/course';
 import { CourseCategory } from 'src/app/shared/models/course-category';
 import { environment } from 'src/environments/environment';
 import Swal from 'sweetalert2';
-import { CourseService } from '../course.service';
+import { CourseService } from '../../../../shared/services/course.service';
 
 @Component({
   selector: 'app-edit',

@@ -1,7 +1,7 @@
 import { Component, NgZone, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import Swal from 'sweetalert2';
-import { BookCategoryService } from '../book-category.service';
+import { BookCategoryService } from '../../../../shared/services/book-category.service';
 
 @Component({
   selector: 'app-index',

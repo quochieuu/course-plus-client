@@ -2,7 +2,7 @@ import { Component, NgZone, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { CourseFaq } from 'src/app/shared/models/course-faq';
 import Swal from 'sweetalert2';
-import { CourseFaqService } from '../course-faq.service';
+import { CourseFaqService } from '../../../../shared/services/course-faq.service';
 
 @Component({
   selector: 'app-edit',

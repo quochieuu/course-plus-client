@@ -1,7 +1,7 @@
 import { Component, NgZone, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
-import { CourseAttachmentService } from '../course-attachment.service';
+import { CourseAttachmentService } from '../../../../shared/services/course-attachment.service';
 
 @Component({
   selector: 'app-create',

@@ -2,7 +2,7 @@ import { Component, NgZone, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import Swal from 'sweetalert2';
-import { BlogCategoryService } from '../blog-category.service';
+import { BlogCategoryService } from '../../../../shared/services/blog-category.service';
 
 @Component({
   selector: 'app-create',

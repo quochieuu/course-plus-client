@@ -3,7 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { AngularEditorConfig } from '@kolkov/angular-editor';
 import { CourseLecture } from 'src/app/shared/models/course-lecture';
 import Swal from 'sweetalert2';
-import { CourseLectureService } from '../course-lecture.service';
+import { CourseLectureService } from '../../../../shared/services/course-lecture.service';
 
 @Component({
   selector: 'app-edit',

@@ -2,7 +2,7 @@ import { Component, NgZone, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { BlogCategory } from 'src/app/shared/models/blog-category';
 import Swal from 'sweetalert2';
-import { BlogCategoryService } from '../blog-category.service';
+import { BlogCategoryService } from '../../../../shared/services/blog-category.service';
 
 @Component({
   selector: 'app-edit',

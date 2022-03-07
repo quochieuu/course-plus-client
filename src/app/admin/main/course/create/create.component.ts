@@ -4,7 +4,7 @@ import { Router } from '@angular/router';
 import { AngularEditorConfig } from '@kolkov/angular-editor';
 import { CourseCategory } from 'src/app/shared/models/course-category';
 import Swal from 'sweetalert2';
-import { CourseService } from '../course.service';
+import { CourseService } from '../../../../shared/services/course.service';
 
 @Component({
   selector: 'app-create',

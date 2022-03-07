@@ -2,7 +2,7 @@ import { Component, NgZone, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { CourseCategory } from 'src/app/shared/models/course-category';
 import Swal from 'sweetalert2';
-import { CourseCategoryService } from '../course-category.service';
+import { CourseCategoryService } from '../../../../shared/services/course-category.service';
 
 @Component({
   selector: 'app-index',
