@@ -7,6 +7,7 @@ import { SidebarComponent } from './shared/sidebar/sidebar.component';
 import { TopHeaderComponent } from './shared/top-header/top-header.component';
 import { MainComponent } from './main.component';
 import { CartComponent } from './cart/cart.component';
+import { ClientAuthGuard } from 'src/app/shared/guard/client-auth.guard';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { CartComponent } from './cart/cart.component';
   imports: [
     CommonModule,
     MainRoutingModule
-  ]
+  ],
+  providers: [ClientAuthGuard]
 })
 export class MainModule { }

@@ -27,10 +27,10 @@ export class RegisterComponent implements OnInit {
 
   onSubmit(): void {
     this.authService.register(this.form).subscribe(
-      data => {
+      (data :any) => {
         this.ngZone.run(() => this.router.navigateByUrl('/login'))
       },
-      err => {
+    (err: any) => {
         this.errorMessage = err.error.errors;
       }
     );
