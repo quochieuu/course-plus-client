@@ -10,6 +10,7 @@ import { UserRegister } from '../models/register';
 })
 export class AccountService {
   private apiURL = environment.apiUrl;
+  currentUser: any;
 
     httpOptions = {
         headers: new HttpHeaders({
@@ -17,7 +18,9 @@ export class AccountService {
         })
     };
 
-  constructor(private httpClient: HttpClient) { }
+  constructor(private httpClient: HttpClient) {
+    this.currentUser = JSON.parse(sessionStorage.getItem('auth-user') || '{}');
+   }
 
   login(data: any): Observable<UserLogin> {
     return this.httpClient.post<UserLogin>(this.apiURL + '/api/auth/login', JSON.stringify(data), this.httpOptions).pipe();
@@ -26,6 +29,22 @@ export class AccountService {
   register(data: any): Observable<UserRegister> {
     return this.httpClient
       .post<UserRegister>(this.apiURL + '/api/auth/register', JSON.stringify(data), this.httpOptions).pipe();
+  }
+
+  getCurrentUser(): Observable<any> {
+    
+    return this.httpClient
+      .get<any>(this.apiURL + '/api/auth/profile', {
+        headers: new HttpHeaders({
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${this.currentUser.accessToken}`
+        })
+    }).pipe();
+  }
+
+  getProvinces() {
+    return this.httpClient
+      .get<any>('https://provinces.open-api.vn/api/?depth=1').pipe();
   }
 
   signOut(): void {

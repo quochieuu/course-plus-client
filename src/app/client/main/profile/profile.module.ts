@@ -6,6 +6,9 @@ import { UpdateInformationComponent } from './update-information/update-informat
 import { ChangePasswordComponent } from './change-password/change-password.component';
 import { ListCoursesComponent } from './list-courses/list-courses.component';
 import { WishlistComponent } from './wishlist/wishlist.component';
+import { NgxPaginationModule } from 'ngx-pagination';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -13,11 +16,15 @@ import { WishlistComponent } from './wishlist/wishlist.component';
     UpdateInformationComponent,
     ChangePasswordComponent,
     ListCoursesComponent,
-    WishlistComponent
+    WishlistComponent,
+    DashboardComponent
   ],
   imports: [
     CommonModule,
-    ProfileRoutingModule
+    ProfileRoutingModule,
+    NgxPaginationModule,
+    FormsModule,
+    ReactiveFormsModule,
   ]
 })
 export class ProfileModule { }

@@ -1,23 +1,19 @@
 import { Component, NgZone, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
 import { AccountService } from 'src/app/shared/services/account.service';
-import { collapseTextChangeRangesAcrossMultipleVersions } from 'typescript';
 
 @Component({
-  selector: 'top-header',
-  templateUrl: './top-header.component.html',
+  selector: 'app-dashboard',
+  templateUrl: './dashboard.component.html',
   styleUrls: [
     './../../../../../assets/client/assets/css/uikit.css',
     './../../../../../assets/client/assets/css/style.css',
     './../../../../../assets/client/assets/css/tailwind.css',
-    './top-header.component.scss'
-  ]
+    './dashboard.component.scss']
 })
-export class TopHeaderComponent implements OnInit {
-  userData: any;
+export class DashboardComponent implements OnInit {
+  user: any;
   constructor(private accountService: AccountService,
-    private ngZone: NgZone,
-    public router: Router,) { }
+    private ngZone: NgZone) { }
 
   ngOnInit(): void {
     this.getUser();
@@ -27,12 +23,9 @@ export class TopHeaderComponent implements OnInit {
     this.accountService
       .getCurrentUser()
       .subscribe((data: any) => {
-        this.userData = data;
+        this.user = data;
+        console.log(this.user)
       });
   }
 
-  logOut(): void {
-    this.accountService.signOut();
-    window.location.reload();
-  }
 }

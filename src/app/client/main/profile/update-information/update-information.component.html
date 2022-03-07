@@ -6,8 +6,8 @@
 
         <nav class="cd-secondary-nav border-b md:m-0 -mx-4 nav-small">
             <ul>
-                <li><a href="#" class="lg:px-2">General </a></li>
-                <li class="active"><a href="#" class="lg:px-2"> Profile </a></li>
+                <li><a routerLink="/" class="lg:px-2">General </a></li>
+                <li class="active"><a routerLink="/profile" class="lg:px-2"> Profile </a></li>
                 <li><a href="#" class="lg:px-2"> Privacy </a></li>
                 <li><a href="#" class="lg:px-2"> Notification </a></li>
                 <li><a href="#" class="lg:px-2"> Social links </a></li>
@@ -20,8 +20,8 @@
         <div class="grid lg:grid-cols-3 gap-8 md:mt-12">
             <div>
                 <div uk-sticky="offset:100;bottom:true;media:992">
-                    <h3 class="text-lg mb-2 font-semibold"> Basic</h3>
-                    <p> Lorem ipsum dolor sit amet nibh consectetuer adipiscing elit</p>
+                    <h3 class="text-lg mb-2 font-semibold"> Thông tin</h3>
+                    <p> Cập nhật thông tin cở bản của bạn</p>
                 </div>
             </div>
             <div class="bg-white rounded-md lg:shadow-md shadow col-span-2">
@@ -29,36 +29,49 @@
                 <div class="grid grid-cols-2 gap-3 lg:p-6 p-4">
                     <div>
                         <label for="first-name"> First name</label>
-                        <input type="text" placeholder="" id="first-name" class="shadow-none with-border">
+                        <input type="text" placeholder="" id="first-name" class="shadow-none with-border" [(ngModel)]="user.firstName" name="firstName">
                     </div>
                     <div>
                         <label for="last-name"> Last name</label>
-                        <input type="text" placeholder="" id="last-name" class="shadow-none with-border">
+                        <input type="text" placeholder="" id="last-name" class="shadow-none with-border" [(ngModel)]="user.lastName" name="lastName">
                     </div>
                     <div class="col-span-2">
                         <label for="email"> Email <span class="text-red-600">*</span></label>
-                        <input type="text" placeholder="" id="email" class="shadow-none with-border">
+                        <input type="text" placeholder="" disabled id="email" class="shadow-none with-border" [(ngModel)]="user.email" name="email">
+                    </div>
+                    <div>
+                        <label for="first-name"> User name</label>
+                        <input type="text" disabled id="first-name" class="shadow-none with-border" [(ngModel)]="user.username" name="username">
+                    </div>
+                    <div>
+                        <label for="Location"> Gender</label>
+                        <select [(ngModel)]="user.gender" name="gender" class="shadow-none with-border">
+                            <option *ngFor="let gender of genders" [value]="gender.val">{{gender.name}}</option>
+                        </select>
                     </div>
                     <div class="col-span-2">
-                        <label for="about">About me</label>  
-                        <textarea id="about" name="about" rows="3"  class="with-border"></textarea>
+                        <label for="about">Username</label>  
+                        <textarea rows="3"  class="with-border" [(ngModel)]="user.introduction" name="introduction"></textarea>
                     </div> 
                      
                     <!-- Website logo  -->
-                    <label for="system_info" class="font-medium">Photo  </label>
+                    <!-- <label for="system_info" class="font-medium">Photo  </label>
                     <div class="col-span-2 flex py-2 space-x-5">
                         <img src="./../../../../../assets/client/assets/images/avatars/placeholder.png" alt="" class="h-12 rounded-full w-12">
                         <a href="#" class="border font-medium px-3 py-1.5 rounded-md self-center shadow-sm text-center text-sm">Change</a>
-                    </div>
+                    </div> -->
 
                     <div class="col-span-2">
                         <label for="Location"> Location</label>
-                        <input type="text" placeholder="" id="location" class="shadow-none with-border">
+                        <!-- <input type="text" placeholder="" id="location" class="shadow-none with-border" [(ngModel)]="userData.address" name="address"> -->
+                        <select [(ngModel)]="user.address" name="address" class="shadow-none with-border">
+                            <option *ngFor="let province of provinces" [value]="province.name">{{province.name}}</option>
+                        </select>
                     </div>
-                    <div>
+                    <!-- <div>
                        <label for="working"> Working at</label>
                        <input type="text" placeholder="" id="working" class="shadow-none with-border">
-                    </div> 
+                    </div>  -->
                 </div> 
                 
             </div>

@@ -25,7 +25,7 @@ export class LoginComponent implements OnInit {
 
   onSubmit(): void {
     this.authService.login(this.form).subscribe(
-      data => {
+      (data: any) => {
           console.log(data.token);
         this.authService.saveToken(data.token);
         this.authService.saveUser(data);
@@ -35,7 +35,7 @@ export class LoginComponent implements OnInit {
         this.ngZone.run(() => this.router.navigateByUrl('/admin'))
         // this.reloadPage();
       },
-      err => {
+      (err: any) => {
         this.errorMessage = err.error.message;
         this.isLoginFailed = true;
       }
