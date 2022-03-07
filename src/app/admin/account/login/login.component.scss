@@ -1,0 +1,11 @@
+@media (min-width: 768px) {
+    .md\:w-1\/2 {
+        width: 50%;
+    }
+    .md\:h-auto {
+        height: auto;
+    }
+    .md\:flex-row {
+        flex-direction: row;
+    }
+}

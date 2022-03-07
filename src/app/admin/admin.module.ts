@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { AdminRoutingModule } from './admin-routing.module';
 import { AdminComponent } from './admin.component';
 import { HttpClientModule } from '@angular/common/http';
+import { AdminAuthGuard } from '../shared/guard';
 
 
 @NgModule({
@@ -14,6 +15,7 @@ import { HttpClientModule } from '@angular/common/http';
     CommonModule,
     AdminRoutingModule,
     HttpClientModule,
-  ]
+  ],
+  providers: [AdminAuthGuard]
 })
 export class AdminModule { }

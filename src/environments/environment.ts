@@ -4,7 +4,9 @@
 
 export const environment = {
   production: false,
-  apiUrl: 'https://localhost:5001'
+  apiUrl: 'https://localhost:5001',
+  TOKEN_KEY: 'auth-token',
+  USER_KEY: 'auth-user',
 };
 
 /*
